@@ -27,6 +27,10 @@ jobs:
         run: |
           pip install flake8
           flake8
+      - name: Install firefox and geckodriver
+        run: |
+          chmod +x ./scripts/InstallFirefox.sh
+          ./scripts/InstallFirefox.sh
       - name: Coverage report
         run: |
           pip install coverage
