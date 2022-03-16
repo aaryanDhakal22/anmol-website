@@ -23,5 +23,5 @@ urlpatterns = [
     path("about", views.about, name="about"),
     path("donate", views.donate, name="donate"),
     path("contact", views.contact, name="contact"),
-    path("blog/", include("blog.urls")),
+    path("blogs/", include("blog.urls")),
 ]

@@ -14,7 +14,7 @@ MAX_WAIT = 3
 class NewBlogTest(StaticLiveServerTestCase):
     def setUp(self):
         self.browser = webdriver.Firefox()
-        self.live_server_url += "/blog/"
+        self.live_server_url += "/blogs/"
 
     def tearDown(self):
         self.browser.quit()

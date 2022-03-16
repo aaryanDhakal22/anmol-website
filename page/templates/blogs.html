@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% block title %}Blogs{% endblock title %}
+{% block body %}
+<div class="display-1" id="head-text">Blogs</div>
+<form action="/blogs/new" method="POST">
+    {% csrf_token %}
+    <input type="text" id="id_new_title"placeholder="Enter title here" name="title_text" autofocus>
+    <input type="text" id="id_new_body"placeholder="Enter title here" name="body_text">
+    <input type="submit" id= "submit_blog"value="Submit">
+
+</form>
+
+
+<table id="id_list_table">
+    <tr>
+        <td>1. {{ title }} : {{ body}}</td>
+      </tr> 
+</table>
+
+{% endblock body %}
