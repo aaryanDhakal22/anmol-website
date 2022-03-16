@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver import FirefoxOptions
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import WebDriverException
 import time
@@ -11,7 +12,9 @@ MAX_WAIT = 3
 
 class NewBlogTest(StaticLiveServerTestCase):
     def setUp(self):
-        self.browser = webdriver.Firefox()
+        opts = FirefoxOptions()
+        opts.add_argument("--headless")
+        self.browser = webdriver.Firefox(firefox_options=opts)
         self.live_server_url += "/blogs/staff/"
 
     def tearDown(self):
