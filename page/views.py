@@ -8,7 +8,6 @@ def homepage(request):
 
 
 def about(request):
-    print("pinged")
     return render(request, "about.html")
 
 

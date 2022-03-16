@@ -1,5 +1,3 @@
-import imp
-from urllib import response
 from django.test import TestCase
 from blog.models import Blog
 
@@ -32,15 +30,18 @@ class ItemModelTest(TestCase):
 
 class NewItemTest(TestCase):
     def test_can_save_a_POST_request(self):
-        response = self.client.post(
+        self.client.post(
             "/blogs/new",
             data={
                 "title_text": "A new title for blog",
                 "body_text": "A new body for blog",
             },
         )
-        self.assertIn("A new title for blog", response.content.decode())
-        self.assertIn("A new body for blog", response.content.decode())
+        self.assertEqual(Blog.objects.count(), 1)
+
+        new_item = Blog.objects.first()
+        self.assertEqual(new_item.title, "A new title for blog")
+        self.assertEqual(new_item.body, "A new body for blog")
 
     def test_can_redirect_after_POST(self):
         response = self.client.post(
@@ -50,10 +51,21 @@ class NewItemTest(TestCase):
                 "body_text": "A new body for blog",
             },
         )
-        self.assertTemplateUsed(response, "blogs.html")
+        self.assertRedirects(response, "/blogs/")
 
 
 class BlogPageTest(TestCase):
     def test_blog_page_returns_correct_html(self):
         response = self.client.get("/blogs/")
         self.assertTemplateUsed(response, "blogs.html")
+
+    def test_multiple_items_view(self):
+        Blog.objects.create(title="title1", body="body1")
+        Blog.objects.create(title="title2", body="body2")
+
+        response = self.client.get("/blogs/")
+        response_text = response.content.decode()
+        self.assertIn("title1", response_text)
+        self.assertIn("title2", response_text)
+        self.assertIn("body1", response_text)
+        self.assertIn("body2", response_text)

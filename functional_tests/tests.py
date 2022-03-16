@@ -14,7 +14,7 @@ MAX_WAIT = 3
 class NewBlogTest(StaticLiveServerTestCase):
     def setUp(self):
         self.browser = webdriver.Firefox()
-        self.live_server_url += "/blogs/"
+        self.live_server_url += "/blogs/staff/"
 
     def tearDown(self):
         self.browser.quit()
@@ -58,11 +58,15 @@ class NewBlogTest(StaticLiveServerTestCase):
 
         # There is still a text box inviting to add another. he emters
         # what is the meaning of life : 69
-
+        self.browser.get(self.live_server_url)
         title = self.browser.find_element(By.ID, "id_new_title")
         title.send_keys("what is the meaning of life")
         body = self.browser.find_element(By.ID, "id_new_body")
         body.send_keys("69")
+
+        # HE then presses enter
+        submit_button = self.browser.find_element(By.ID, "submit_blog")
+        submit_button.click()
 
         # The page updates again and now shows both items on his list
         self.wait_for_row_in_list_table("1. why to become doctor : for the foreplay")

@@ -1,18 +1,30 @@
 from django.shortcuts import redirect, render
 
+# from matplotlib.pyplot import title
+from blog.models import Blog
+
 # Create your views here.
 
 
+def staffView(request):
+    return render(request, "blogCreate.html")
+
+
 def blogView(request):
-    return render(request, "blogs.html")
+    blogs = Blog.objects.all()
+    return render(request, "blogs.html", {"blogs": blogs})
 
 
 def createBlog(request):
-    context = {}
-    if request.method == "POST":
-        context = {
-            "title": request.POST["title_text"],
-            "body": request.POST["body_text"],
-        }
-
-    return render(request, "blogs.html", context)
+    Blog.objects.create(
+        title=request.POST["title_text"], body=request.POST["body_text"]
+    )
+    return redirect("/blogs/")
+    # return render(
+    #     request,
+    #     "blogs.html",
+    #     context={
+    #         "title": request.POST.get("title_text", ""),
+    #         "body": request.POST.get("body_text", ""),
+    #     },
+    # )
