@@ -1,0 +1,24 @@
+.bg-blue {
+  background-color: #1c5982;
+}
+.bg-orange {
+  /* background-color: red; */
+  background-color: #ea7826;
+}
+.bord-orange {
+  border-color: #ea7826;
+}
+.text-blue {
+  color: #1c5982;
+}
+.txt-orange {
+  color: #ea7826;
+}
+.sq_img {
+  height: 120px;
+  width: 120px;
+}
+.divider {
+  border-top: 1.5px solid rgb(182, 182, 182);
+  width: 80%;
+}
