@@ -1,3 +1,6 @@
+body {
+  font-family: "Roboto";
+}
 .bg-blue {
   background-color: #1c5982;
 }
@@ -5,14 +8,32 @@
   /* background-color: red; */
   background-color: #ea7826;
 }
+.bg-lt-blue {
+  background-color: #5dbeff;
+}
+.bg-gray {
+  color: #aeaeae;
+}
+.bg-dark-gray {
+  background-color: #d8d8d8;
+}
 .bord-orange {
   border-color: #ea7826;
 }
-.text-blue {
+.bord-lt-blue {
+  border-color: #5dbeff;
+}
+.txt-blue {
   color: #1c5982;
+}
+.txt-lt-blue {
+  color: #5dbeff;
 }
 .txt-orange {
   color: #ea7826;
+}
+.txt-gray {
+  color: #aeaeae;
 }
 .sq_img {
   height: 120px;
@@ -21,4 +42,7 @@
 .divider {
   border-top: 1.5px solid rgb(182, 182, 182);
   width: 80%;
+}
+.spaced-well {
+  letter-spacing: 3px;
 }
