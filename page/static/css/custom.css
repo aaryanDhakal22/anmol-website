@@ -46,3 +46,7 @@ body {
 .spaced-well {
   letter-spacing: 3px;
 }
+.bg-pattern {
+  background-image: url("/static/images/pattern.png");
+  background-color: rgba(93, 190, 255, 0.13);
+}
