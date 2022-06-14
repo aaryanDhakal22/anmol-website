@@ -50,3 +50,10 @@ body {
   background-image: url("/static/images/pattern.png");
   background-color: rgba(93, 190, 255, 0.13);
 }
+input::placeholder {
+  text-align: center;
+}
+
+textarea::placeholder {
+  text-align: center;
+}
