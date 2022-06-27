@@ -1,16 +1,33 @@
 {% extends 'base.html' %} 
 {% block title %}Blogs{% endblock title %}
 {% block body %}
-<div class="display-1" id="head-text">Blogs</div>
-
-
-
+{% load static%}
+<!-- <div class="display-1" id="head-text">Blogs</div>
 <table id="id_list_table">
     {% for blog in blogs %}
     <tr>
         <td>1. {{ blog.title }} : {{ blog.body }}</td>
       </tr> 
       {% endfor %}
-</table>
-
+</table> -->
+<div class="text-center d-none d-lg-block">
+  <img class = "img-fluid"  style="width: 20rem;" src="{% static 'images/blog.png'%}" alt="">
+</div>
+<div class="text-center d-lg-none d-xs-block d-sm-block mt-3">
+  <img class = "img-fluid" style="width: 20rem;" src="{% static 'images/blog.png'%}" alt="">
+</div>
+<div class="bg-gray mt-3">
+    <div class="container">
+    <div class="">
+      <div class="row">
+        <div class="col-5">
+          <img class="img-fluid" src="{% static 'images/trump.png' %}" width="110rem" alt="">
+        </div>
+        <div class="col-7">
+          hellp
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
 {% endblock body %}
