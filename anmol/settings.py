@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django_browser_reload",  # Browser reloader
     "blog",
     "page",
+    "apis",
 ]
 
 MIDDLEWARE = [

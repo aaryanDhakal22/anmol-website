@@ -2,15 +2,15 @@
 {% block title %}Blogs{% endblock title %}
 {% block body %}
 {% load static%}
-<!-- <div class="display-1" id="head-text">Blogs</div>
+<div class="display-1" id="head-text">Blogs</div>
 <table id="id_list_table">
     {% for blog in blogs %}
     <tr>
         <td>1. {{ blog.title }} : {{ blog.body }}</td>
       </tr> 
       {% endfor %}
-</table> -->
-<div class="text-center d-none d-lg-block">
+</table>
+{% comment %} <div class="text-center d-none d-lg-block">
   <img class = "img-fluid"  style="width: 20rem;" src="{% static 'images/blog.png'%}" alt="">
 </div>
 <div class="text-center d-lg-none d-xs-block d-sm-block mt-3">
@@ -29,5 +29,5 @@
       </div>
     </div>
     </div>
-</div>
+</div> {% endcomment %}
 {% endblock body %}

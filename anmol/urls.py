@@ -24,5 +24,6 @@ urlpatterns = [
     path("donate", views.donate, name="donate"),
     path("contact", views.contact, name="contact"),
     path("blogs/", include("blog.urls")),
+    path("api/",include("apis.urls")),
     path("__reload__/", include("django_browser_reload.urls")),
 ]
