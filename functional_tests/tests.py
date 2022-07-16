@@ -12,7 +12,7 @@ MAX_WAIT = 3
 class NewBlogTest(StaticLiveServerTestCase):
     def setUp(self):
         opts = Options()
-        # opts.add_argument("--headless")
+        opts.add_argument("--headless")
         self.browser = webdriver.Firefox(options=opts)
         self.live_server_url += "/blogs/staff/"
 
