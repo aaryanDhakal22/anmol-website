@@ -7,61 +7,82 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='NotificationModel',
+            name="NotificationModel",
             fields=[
-                ('studentId', models.CharField(default=0, max_length=50)),
-                ('transactionId', models.CharField(default=0, max_length=50)),
-                ('notificationId', models.CharField(default=0, max_length=50, primary_key=True, serialize=False)),
-                ('date', models.CharField(default='', max_length=15)),
-                ('amount', models.IntegerField(default=0)),
-                ('forMonth', models.CharField(max_length=20)),
-                ('speechTherapy', models.IntegerField(default=0)),
-                ('therapy', models.IntegerField(default=0)),
-                ('transportation', models.IntegerField(default=0)),
-                ('extras', models.IntegerField(default=0)),
-                ('note', models.CharField(default='', max_length=200)),
-                ('tuition', models.IntegerField(default=0)),
-                ('snacks', models.IntegerField(default=0)),
-                ('paid', models.CharField(default='', max_length=10)),
+                ("studentId", models.CharField(default=0, max_length=50)),
+                ("transactionId", models.CharField(default=0, max_length=50)),
+                (
+                    "notificationId",
+                    models.CharField(
+                        default=0, max_length=50, primary_key=True, serialize=False
+                    ),
+                ),
+                ("date", models.CharField(default="", max_length=15)),
+                ("amount", models.IntegerField(default=0)),
+                ("forMonth", models.CharField(max_length=20)),
+                ("speechTherapy", models.IntegerField(default=0)),
+                ("therapy", models.IntegerField(default=0)),
+                ("transportation", models.IntegerField(default=0)),
+                ("extras", models.IntegerField(default=0)),
+                ("note", models.CharField(default="", max_length=200)),
+                ("tuition", models.IntegerField(default=0)),
+                ("snacks", models.IntegerField(default=0)),
+                ("paid", models.CharField(default="", max_length=10)),
             ],
         ),
         migrations.CreateModel(
-            name='StudentModel',
+            name="StudentModel",
             fields=[
-                ('studentId', models.CharField(default=0, max_length=20, primary_key=True, serialize=False)),
-                ('name', models.CharField(default='', max_length=50)),
-                ('phone', models.BigIntegerField(default=0)),
-                ('gender', models.CharField(choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Others')], default='', max_length=10)),
-                ('father', models.CharField(default='', max_length=50)),
-                ('mother', models.CharField(default='', max_length=50)),
-                ('address', models.CharField(default='', max_length=100)),
-                ('group', models.CharField(default='', max_length=5)),
-                ('age', models.IntegerField(default=0)),
-                ('dob', models.CharField(default='', max_length=12)),
-                ('speechTherapy', models.IntegerField(default=0)),
-                ('therapy', models.IntegerField(default=0)),
-                ('transportation', models.IntegerField(default=0)),
-                ('tuition', models.IntegerField(default=0)),
-                ('snacks', models.IntegerField(default=0)),
-                ('isAdmission', models.BooleanField(default=False)),
+                (
+                    "studentId",
+                    models.CharField(
+                        default=0, max_length=20, primary_key=True, serialize=False
+                    ),
+                ),
+                ("name", models.CharField(default="", max_length=50)),
+                ("phone", models.BigIntegerField(default=0)),
+                (
+                    "gender",
+                    models.CharField(
+                        choices=[("M", "Male"), ("F", "Female"), ("O", "Others")],
+                        default="",
+                        max_length=10,
+                    ),
+                ),
+                ("father", models.CharField(default="", max_length=50)),
+                ("mother", models.CharField(default="", max_length=50)),
+                ("address", models.CharField(default="", max_length=100)),
+                ("group", models.CharField(default="", max_length=5)),
+                ("age", models.IntegerField(default=0)),
+                ("dob", models.CharField(default="", max_length=12)),
+                ("speechTherapy", models.IntegerField(default=0)),
+                ("therapy", models.IntegerField(default=0)),
+                ("transportation", models.IntegerField(default=0)),
+                ("tuition", models.IntegerField(default=0)),
+                ("snacks", models.IntegerField(default=0)),
+                ("isAdmission", models.BooleanField(default=False)),
             ],
         ),
         migrations.CreateModel(
-            name='TransactionModel',
+            name="TransactionModel",
             fields=[
-                ('transactionId', models.CharField(default=0, max_length=50, primary_key=True, serialize=False)),
-                ('date', models.CharField(default='', max_length=15)),
-                ('type', models.CharField(max_length=20)),
-                ('subType', models.CharField(default='', max_length=10)),
-                ('payer', models.CharField(default='', max_length=10)),
-                ('note', models.CharField(default='', max_length=200)),
-                ('amount', models.IntegerField(default=0)),
-                ('mode', models.CharField(default='', max_length=10)),
+                (
+                    "transactionId",
+                    models.CharField(
+                        default=0, max_length=50, primary_key=True, serialize=False
+                    ),
+                ),
+                ("date", models.CharField(default="", max_length=15)),
+                ("type", models.CharField(max_length=20)),
+                ("subType", models.CharField(default="", max_length=10)),
+                ("payer", models.CharField(default="", max_length=10)),
+                ("note", models.CharField(default="", max_length=200)),
+                ("amount", models.IntegerField(default=0)),
+                ("mode", models.CharField(default="", max_length=10)),
             ],
         ),
     ]
