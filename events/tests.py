@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import Event
+from datetime import datetime
 
 # Create your tests here.
 
@@ -89,3 +90,24 @@ class EventPageTest(TestCase):
         self.assertIn("event2", response_text)
         self.assertIn("body1", response_text)
         self.assertIn("body2", response_text)
+
+
+class EventGetAPITest(TestCase):
+    def test_can_get_latest_event(self):
+        new_event = Event()
+        new_event.event = "the first ever event"
+        new_event.body = "the first ever event body"
+
+        year, month, day = list(map(int, datetime.now().strftime("%Y %m %d").split()))
+        year += 2
+        new_event.date = "-".join([str(year), str(month).zfill(2), str(day)])
+        checkDate = new_event.date
+        new_event.save()
+
+        self.assertEqual(Event.objects.count(), 1)
+
+        response = self.client.get("/events/getEvent/")
+        decoded = response.json()[0]
+        self.assertEqual(decoded["date"], checkDate)
+        self.assertEqual(decoded["event"], "the first ever event")
+        self.assertEqual(decoded["body"], "the first ever event body")
