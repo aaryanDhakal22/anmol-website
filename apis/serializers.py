@@ -30,10 +30,12 @@ class NotificationSerializers(serializers.ModelSerializer):
     class Meta:
         model = NotificationModel
         fields = (
-            "studentunId",
-            "transactionId" "notificationId" "date",
+            "studentId",
+            "transactionId",
+            "notificationId",
+            "date",
             "amount",
-            "forMonth",
+            "month",
             "speechTherapy",
             "therapy",
             "transportation",
@@ -49,7 +51,7 @@ class TransactionSerializers(serializers.ModelSerializer):
     class Meta:
         model = TransactionModel
         fields = (
-            "transationId",
+            "transactionId",
             "date",
             "type",
             "subType",

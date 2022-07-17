@@ -35,18 +35,18 @@ class NotificationModel(models.Model):
     notificationId = models.CharField(max_length=50, default=0, primary_key=True)
     date = models.CharField(max_length=15, default="")
     amount = models.IntegerField(default=0)
-    forMonth = models.CharField(max_length=20)
+    month = models.CharField(max_length=20)
     speechTherapy = models.IntegerField(default=0)
     therapy = models.IntegerField(default=0)
     transportation = models.IntegerField(default=0)
     extras = models.IntegerField(default=0)
-    note = models.CharField(default="", max_length=200)
+    note = models.CharField(default="", max_length=200, blank=True)
     tuition = models.IntegerField(default=0)
     snacks = models.IntegerField(default=0)
     paid = models.CharField(default="", max_length=10)
 
     def __str__(self):
-        return str(self.notificationid)
+        return str(self.notificationId)
 
 
 class TransactionModel(models.Model):
@@ -54,7 +54,7 @@ class TransactionModel(models.Model):
     date = models.CharField(max_length=15, default="")
     type = models.CharField(max_length=20)
     subType = models.CharField(default="", max_length=10)
-    payer = models.CharField(default="", max_length=10)
+    payer = models.CharField(default="", max_length=50)
     note = models.CharField(default="", max_length=200)
     amount = models.IntegerField(default=0)
     mode = models.CharField(default="", max_length=10)  # credit or debit
