@@ -16,10 +16,16 @@ def blogView(request):
 
 
 def createBlog(request):
-    Blog.objects.create(
-        title=request.POST["title_text"], body=request.POST["body_text"]
-    )
+    password = request.POST["password"]
+    if password == "yY3mzS^95O2c#^P":
+
+        Blog.objects.create(
+            title=request.POST["title_text"],
+            body=request.POST["body_text"],
+            date=request.POST["date_text"],
+        )
     return redirect("/blogs/")
+
     # return render(
     #     request,
     #     "blogs.html",

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "blog",
     "page",
     "apis",
+    "events",
 ]
 
 MIDDLEWARE = [

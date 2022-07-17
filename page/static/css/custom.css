@@ -1,6 +1,10 @@
 body {
   font-family: "Roboto";
 }
+.roboto{
+
+  font-family: "Roboto";
+}
 .text-condensed-rob {
   font-family: "Roboto Condensed", sans-serif;
 }
@@ -41,6 +45,12 @@ body {
 .txt-gray {
   color: #aeaeae;
 }
+.txt-dark-gray {
+  color: #878787;
+}
+.blog-back{
+  background-color: #ececec;
+}
 .sq_img {
   height: 120px;
   width: 120px;
@@ -62,4 +72,8 @@ input::placeholder {
 
 textarea::placeholder {
   text-align: center;
+}
+.dec-line-space{
+  line-height: 20px;
+  font-size: 0.8rem;
 }

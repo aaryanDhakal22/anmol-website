@@ -4,5 +4,6 @@ from django.db import models
 
 
 class Blog(models.Model):
+    date = models.DateField(default=0)
     title = models.TextField(default="")
     body = models.TextField(default="")
